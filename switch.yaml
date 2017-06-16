@@ -1,0 +1,46 @@
+# Switch Configurations
+# RF Switches Controlled via Raspberry Pi RF  
+ - platform: rpi_rf
+   gpio: 17
+   switches:
+     living_couchleft:
+       protocol: 1
+       pulselength: 180
+       code_on: 4199731
+       code_off: 4199740
+       signal_repetitions: 20
+     living_couchright:
+       protocol: 1
+       pulselength: 180
+       code_on: 4199875
+       code_off: 4199884
+       signal_repetitions: 20 
+     bedroom_mainlamps:
+       protocol: 1
+       pulselength: 179
+       code_on: 4207875
+       code_off: 4207884
+       signal_repetitions: 20
+     bedroom_nightstand1:
+       protocol: 1
+       pulselength: 180
+       code_on: 4200195
+       code_off: 4200204
+       signal_repetitions: 20
+     bedroom_nightstand2:
+       protocol: 1
+       pulselength: 180
+       code_on: 4201731
+       code_off: 4201740
+       signal_repetitions: 20
+
+ - platform: broadlink
+   host: 10.0.1.12
+   mac: '34:EA:34:E0:BE:8A'
+   friendly_name: Broadlink IR Blaster
+   switches:
+     kitchen_led_strip:
+       friendly_name: Kitchen LED Strip
+       command_on: 'JgBQAAABK5QVEhIUEhQQFRETEhMSFBISEDsSNxI5EzUUOBI3EzcSOBM3EhMSNxQ3EhITExMSEhQRFBI3ExITExI4EjgSNxM3EgAFGgABLkkTAA0FAAAAAAAAAAA='
+       command_off: 'JgBQAAABLZQTEhMSExMSExISFRISEhITEzgSORE3FDcUNhM4ETkTNhQ2EzcTORI3EzcUERIVEhITExITExISExMTEjcTOBE5EgAFHgABLEsSAA0FAAAAAAAAAAA='
+

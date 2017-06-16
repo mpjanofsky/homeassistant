@@ -1,0 +1,23 @@
+light_flash:
+  alias: Light flash on
+  sequence:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: group.dining_room_track_lights
+    - delay:
+        seconds: .5
+    - service: homeassistant.turn_off
+      data:
+        entity_id: group.dining_room_track_lights
+    - service: script.turn_on
+      data:
+        entity_id: script.light_loop
+light_loop:
+  alias: Light flash loop
+  sequence:
+    - delay:
+        # time for flash light off
+        seconds: .5
+    - service: script.turn_on
+      data:
+        entity_id: script.light_flash

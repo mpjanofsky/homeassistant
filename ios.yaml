@@ -1,0 +1,15 @@
+push:
+  categories:
+   - name: Away Alarm
+     identifier: 'ALARM'
+     actions:
+      - identifier: 'ACK_ALARM'
+        title: 'Acknowledge Alarm'
+        activationMode: 'background'
+        authenticationRequired: yes
+        destructive: yes
+      - identifier: 'RESET ALARM'
+        title: 'Reset Alarm'
+        activationMode: 'background'
+        authenticationRequired: yes
+        destructive: no

@@ -1,0 +1,23 @@
+alias: 'Welcome Home Lights'
+trigger:
+ - platform: state
+   entity_id: binary_sensor.front_door
+   state: 'on'
+condition:
+  condition: and
+  conditions:
+   - condition: sun
+     after: sunset
+     after_offset: "-1:00:00"
+   - condition: state
+     entity_id: group.dining_room_track_lights
+     state: 'off'  
+action:
+ - service: light.turn_on
+   entity_id: group.dining_room_track_lights
+   data:
+     brightness: 50
+     color_name: linen
+     transition: 5
+ - service: input_boolean.turn_on
+   entity_id: input_boolean.welcome_home_fade

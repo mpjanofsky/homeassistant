@@ -1,0 +1,9 @@
+alias: 'Notify on Front Door Open'
+trigger:
+ - platform: state
+   entity_id: binary_sensor.front_door
+   state: 'on'     
+action:
+  service: notify.ios_mikesiphone
+  data:
+    message: "Front Door Opened"

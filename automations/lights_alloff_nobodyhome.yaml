@@ -1,0 +1,10 @@
+alias: 'Turn off all the lights if everybody leaves'
+trigger:
+ - platform: state
+   entity_id: group.all_devices
+   state: 'away'
+action:
+ - service: homeassistant.turn_off
+   entity_id: 
+    - group.all_lights
+    - group.all_switches

@@ -1,0 +1,9 @@
+alias: 'SN1 Motion LED Off'
+trigger:
+ - platform: state
+   entity_id: sensor.sn1_pir
+   state: 'standby' 
+action:
+ - service: light.turn_off
+   entity_id: light.sn1_led
+

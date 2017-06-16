@@ -1,0 +1,16 @@
+alias: 'Trigger alarm while armed away'
+trigger:
+ - platform: state
+   entity_id: binary_sensor.front_door
+   state: 'on'
+condition:
+ - condition: state
+   entity_id: alarm_control_panel_panel.ha_alarm
+   state: armed_away
+action:
+ - service: alarm_control_panel.alarm_trigger
+   entity_id: alarm_control_panel.ha_alarm
+ - service: notify.ios_mikesiphone
+   data:
+     title: "ALARM TRIGGERED"
+     message: "The alarm has been triggered."

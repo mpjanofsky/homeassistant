@@ -1,0 +1,63 @@
+# Travel Time
+ - platform: google_travel_time
+   name: Mike to Home
+   api_key: !secret maps_api_key
+   origin: device_tracker.mikesiphone
+   destination: zone.home
+
+ - platform: google_travel_time
+   name: Christian to Home
+   api_key: !secret maps_api_key
+   origin: device_tracker.christiansiphone
+   destination: zone.home 
+
+ # Weather Prediction
+ - platform: yr
+
+ # Sensor Node 1
+ - platform: mqtt
+   state_topic: "teamsharkbait/sensornode1"
+   name: "SN1 Humidity"
+   unit_of_measurement: "%"
+   value_template: '{{ value_json.humidity | round(1) }}'
+
+ - platform: mqtt
+   state_topic: "teamsharkbait/sensornode1"
+   name: "SN1 LDR"
+   unit_of_measurement: "LUX"
+   value_template: '{{ value_json.ldr }}'
+
+ - platform: mqtt
+   state_topic: "teamsharkbait/sensornode1"
+   name: "SN1 PIR"
+   value_template: '{{ value_json.motion }}'
+
+ - platform: mqtt
+   state_topic: "teamsharkbait/sensornode1"
+   name: "SN1 Temperature"
+   unit_of_measurement: "°F"
+   value_template: '{{ value_json.temperature | round(1) }}'   
+
+ # # Sensor Node 2
+ # - platform: mqtt
+ #   state_topic: "teamsharkbait/sensornode2"
+ #   name: "SN1 Humidity"
+ #   unit_of_measurement: "%"
+ #   value_template: '{{ value_json.humidity | round(1) }}'
+
+ # - platform: mqtt
+ #   state_topic: "teamsharkbait/sensornode2"
+ #   name: "SN1 LDR"
+ #   unit_of_measurement: "LUX"
+ #   value_template: '{{ value_json.ldr }}'
+
+ # - platform: mqtt
+ #   state_topic: "teamsharkbait/sensornode2"
+ #   name: "SN1 PIR"
+ #   value_template: '{{ value_json.motion }}'
+
+ # - platform: mqtt
+ #   state_topic: "teamsharkbait/sensornode2"
+ #   name: "SN1 Temperature"
+ #   unit_of_measurement: "°F"
+ #   value_template: '{{ value_json.temperature | round(1) }}' 

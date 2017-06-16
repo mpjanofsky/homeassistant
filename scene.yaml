@@ -1,0 +1,28 @@
+# Scenes
+# Evening Scene
+ - name: Evening
+   entities:
+    group.living_room: on
+    switch.bedroom_nightstand1: off
+    switch.bedroom_nightstand2: on    
+# Bedtime Scene
+ - name: Bedtime
+   entities:
+    switch.living_couchleft: off
+    switch.living_couchright: off
+    switch.bedroom_nightstand1: on
+    switch.bedroom_nightstand2: on
+    switch.bedroom_mainlamps: off
+# Sleep Scene - All Lights Off 
+ - name: Sleep
+   entities:
+     group.all_lights: off
+     group.all_switches: off
+# Dinner
+ - name: Dinner
+   entities:
+     group.dining_room_track_lights:
+       state: on
+       color_name: white
+       brightness: 50
+       

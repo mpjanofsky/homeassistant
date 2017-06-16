@@ -1,0 +1,12 @@
+alias: 'SN1 Motion LED On'
+trigger:
+ - platform: state
+   entity_id: sensor.sn1_pir
+   state: 'motion detected' 
+action:
+ - service: light.turn_on
+   entity_id: light.sn1_led
+   data:
+     brightness: 50
+     color_name: green
+     transition: 0

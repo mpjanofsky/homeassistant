@@ -1,0 +1,12 @@
+alias: 'Notify if Front Door Left Open'
+trigger:
+ - platform: state
+   entity_id: binary_sensor.front_door
+   state: 'on'
+   for:
+     minutes: 1     
+action:
+  service: notify.ios_mikesiphone
+  data:
+    title: "Front Door Left Open!"
+    message: "Check the Door"

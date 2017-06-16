@@ -1,0 +1,16 @@
+alias: 'Turn off Welcome Home lights'
+trigger:
+ - platform: state
+   entity_id: binary_sensor.front_door
+   state: 'off'
+   for:
+     minutes: 1
+condition:
+ - condition: state
+   entity_id: input_boolean.welcome_home_fade
+   state: 'on'
+action:
+ - service: light.turn_off
+   entity_id: group.dining_room_track_lights
+ - service: input_boolean.turn_off
+   entity_id: input_boolean.welcome_home_fade

@@ -1,0 +1,118 @@
+ default_view:
+   view: yes
+   entities:
+    - group.rooms
+    - group.monitoring
+    - group.travel_time
+    - device_tracker.mikesiphone
+    - device_tracker.christiansiphone
+    - sun.sun
+    - sensor.yr_symbol
+    - group.sensornode1
+# Group Configuration 
+ rooms:
+   name: Rooms
+   icon: mdi:home
+   entities:
+    - group.living_room
+    - group.dining_room
+    - group.kitchen
+    - group.bedroom
+ living_room:
+   name: Living Room
+   icon: mdi:television
+   entities: 
+    - switch.living_couchleft
+    - switch.living_couchright
+ bedroom:
+   name: Bedroom
+   icon: mdi:hotel
+   entities:
+    - switch.bedroom_mainlamps
+    - switch.bedroom_nightstand1
+    - switch.bedroom_nightstand2
+ dining_room:
+   name: Dining Room
+   icon: mdi:silverware-fork
+   entities:
+    - group.dining_room_track_lights
+ dining_room_track_lights:
+   name: Dining Room Track Lights
+   icon: mdi:lightbulb-on
+   entities:
+    - light.dining_track1
+    - light.dining_track2
+    - light.dining_track3
+ kitchen:
+   name: Kitchen
+   icon: mdi:fridge
+   entities:
+    - group.kitchen_led
+ kitchen_led:
+   name: Kitchen LED Strip
+   icon: mdi:lightbulb-on
+   entities:
+    - switch.kitchen_led_strip  
+
+ travel_time:
+   name: Travel Time
+   icon: mdi:car
+   entities:
+     - sensor.mike_to_home
+     - sensor.christian_to_home
+# Views (Tabs)
+ options_view:
+   view: yes
+   name: Options
+   entities:
+    - group.all_automations
+    - group.all_scripts
+ living_room_view:
+   view: yes
+   name: Living Room
+   entities:
+    - group.living_room
+ dining_room_view:
+   view: yes  
+   name: Dining Room
+   entities:
+    - group.dining_room_track_lights
+ bedroom_view:
+   view: yes
+   name: Bedroom
+   entities:
+    - group.bedroom
+ media_players_view:
+   view: yes
+   name: Media Players
+   entities:
+    - media_player.bedroom_apple_tv
+# Device Trackers
+ presence:
+   name: Who's Home?
+   entities:
+    - device_tracker.mikesiphone
+    - device_tracker.christiansiphone
+# Sensors
+ monitoring:
+   name: Home Monitoring
+   entities:
+    - alarm_control_panel.ha_alarm
+    - binary_sensor.front_door
+    - binary_sensor.visonic_mct340_e_0b3b980d_1
+ sensornode1:
+   name: Sensor Node 1
+   entities:
+    - sensor.sn1_temperature
+    - sensor.sn1_humidity
+    - sensor.sn1_ldr
+    - sensor.sn1_pir
+    - light.sn1_led
+ sensornode2:
+   name: Sensor Node 2
+   entities:
+    - sensor.sn2_temperature
+    - sensor.sn2_humidity
+    - sensor.sn2_ldr
+    - sensor.sn2_pir
+    - light.sn2_led

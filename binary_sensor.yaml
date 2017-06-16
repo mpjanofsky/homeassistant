@@ -1,0 +1,4 @@
+# Front Door Wired Sensor
+  - platform: rpi_gpio
+    ports:
+      4: front_door

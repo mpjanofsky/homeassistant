@@ -1,0 +1,72 @@
+# Living Room Swithes
+switch.living_couchleft:
+  icon: mdi:lightbulb-on
+  friendly_name: Left Couch Lamp
+switch.living_couchright:
+  icon: mdi:lightbulb-on
+  friendly_name: Right Couch Lamp
+   
+# Bedroom Switches
+switch.bedroom_mainlamps:
+  icon: mdi:lightbulb-on
+  friendly_name: Main Lamps
+switch.bedroom_nightstand1:
+  icon: mdi:lightbulb-on
+  friendly_name: Christian's Nightstand
+switch.bedroom_nightstand2:
+  icon: mdi:lightbulb-on
+  friendly_name: Mike's Nightstand
+
+#Kitchen LED Switches
+switch.kitchen_led_strip:
+  assumed_state: false
+   
+# Dining Room Lights
+light.dining_track1:
+  friendly_name: Dining Room - 1
+light.dining_track2:
+  friendly_name: Dining Room - 2
+light.dining_track3:
+  friendly_name: Dining Room - 3
+   
+# Sensors
+sensor.yr_symbol:
+  friendly_name: Weather 
+binary_sensor.front_door:
+  friendly_name: Front Door
+  device_class: opening
+binary_sensor.visonic_mct340_e_0b3b980d_1:
+  friendly_name: Balcony Door
+  device_class: opening
+
+# Hide Input Boolean
+input_boolean.welcome_home_fade:
+  hidden: true
+  
+# Custom Views
+group.all_automations:
+  hidden: false
+  friendly_name: Automations
+group.all_scripts:
+  hidden: false
+  friendly_name: Scripts
+  
+# Devices
+sensor.iphone_battery_level:
+  friendly_name: Mike's iPhone Battery
+  hidden: true
+sensor.iphone_battery_state:
+  hidden: true
+sensor.iphone_7_battery_level:
+  friendly_name: Christian's iPhone Battery
+  hidden: true
+sensor.iphone_7_battery_state:
+  hidden: true
+  
+# For Home Bluetooth Beacon
+zone.home:
+  beacon:
+    uuid: E20A39F4-73F5-4BC4-A12F-17D1AD07A961
+    major: 0
+    minor: 0
+      
